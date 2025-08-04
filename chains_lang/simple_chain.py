@@ -8,8 +8,7 @@ load_dotenv()
 model = ChatOpenAI()
 
 prompt = PromptTemplate(
-    template="generate 5 interesting facts about {topic}",
-    input_variables=["topic"]
+    template="generate 5 interesting facts about {topic}", input_variables=["topic"]
 )
 
 parser = StrOutputParser()

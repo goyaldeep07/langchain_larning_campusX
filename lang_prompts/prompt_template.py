@@ -11,9 +11,9 @@ template_text = """Please summarize the research paper titled "{paper_input}" wi
                              - Use relatable analogies to simplify complex ideas.  
                              If certain information is not available in the paper, respond with: "Insufficient information available" instead of guessing.  
                             Ensure the summary is clear, accurate, and aligned with the provided style and length."""
-template = PromptTemplate(template=template_text,
-                          inputs=["paper_input", "style_input", "length_input"]
-                          )
+template = PromptTemplate(
+    template=template_text, inputs=["paper_input", "style_input", "length_input"]
+)
 
 # Example usage
 filled = template.format(

@@ -14,7 +14,7 @@ documents = [
     "MS Dhoni is a former Indian captain famous for his calm demeanor and finishing skills.",
     "Sachin Tendulkar, also known as the 'God of Cricket', holds many batting records.",
     "Rohit Sharma is known for his elegant batting and record-breaking double centuries.",
-    "Jasprit Bumrah is an Indian fast bowler known for his unorthodox action and yorkers."
+    "Jasprit Bumrah is an Indian fast bowler known for his unorthodox action and yorkers.",
 ]
 
 query = "tell me about bumrah"
@@ -25,6 +25,8 @@ query_embedding = embedding_model.embed_query(query)
 similarities = cosine_similarity([query_embedding], doc_embeddings)[0]
 enumerated_docs = list(enumerate(similarities))
 
-index, score = sorted(list(enumerate(similarities)), key=lambda x: x[1], reverse=True)[0]
+index, score = sorted(list(enumerate(similarities)), key=lambda x: x[1], reverse=True)[
+    0
+]
 print(f"Most similar document index: {index}, score: {score}")
 print(f"Most similar document: {documents[index]}")

@@ -7,9 +7,7 @@ load_dotenv()
 
 model = ChatOpenAI()
 
-chat_history = [
-    SystemMessage(content="You are a helpful assistant.")
-]
+chat_history = [SystemMessage(content="You are a helpful assistant.")]
 while True:
     input_text = input("You: ")
     chat_history.append(HumanMessage(content=input_text))

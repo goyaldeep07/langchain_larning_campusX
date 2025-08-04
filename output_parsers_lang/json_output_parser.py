@@ -12,7 +12,7 @@ parser = JsonOutputParser()
 template = PromptTemplate(
     template="give me the name, age and city of a fictional person {format_instructions}",
     input_variables=[],
-    partial_variables={"format_instructions": parser.get_format_instructions()}
+    partial_variables={"format_instructions": parser.get_format_instructions()},
 )
 
 chain = template | model | parser

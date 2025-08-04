@@ -13,10 +13,14 @@ from dotenv import load_dotenv
 # # this works
 """messages=[SystemMessage(content='You are a helpful computer science assistant.', additional_kwargs={}, response_metadata={}), HumanMessage(content='Explain in simple terms: what is quantum computing', additional_kwargs={}, response_metadata={})]"""
 
-chat_template = ChatPromptTemplate([
-    ('system', "You are a helpful {domain} assistant."),
-    ('human', "Explain in simple terms: what is {question}")
-])
+chat_template = ChatPromptTemplate(
+    [
+        ("system", "You are a helpful {domain} assistant."),
+        ("human", "Explain in simple terms: what is {question}"),
+    ]
+)
 
-prompt = chat_template.invoke(input=dict(domain="computer science", question="quantum computing"))
+prompt = chat_template.invoke(
+    input=dict(domain="computer science", question="quantum computing")
+)
 print(prompt)
